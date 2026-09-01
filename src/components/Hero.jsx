@@ -14,34 +14,35 @@ function Hero() {
 
   return (
     <div className="grid gap-10 bg-base-200 px-4 py-8 transition-colors duration-300 lg:grid-cols-2 lg:px-8 lg:py-14">
-      <article
-        style={{ backgroundImage: `url(${imgHero})` }}
-        className="relative min-h-[260px] overflow-hidden rounded-3xl border-b border-base-300 bg-cover bg-center bg-no-repeat"
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-transparent" />
+      <article className="relative min-h-65 overflow-hidden rounded-3xl border border-base-300 bg-cover bg-center bg-no-repeat shadow-xl transition-all duration-300">
+        {/* GRADIENTE 1: Dall'alto (Sfuma il colore di sfondo del tema per dare profondità) */}
+        <div className="absolute inset-0 bg-linear-to-b from-base-300/80 via-base-200/40 to-transparent" />
 
-        <div className="relative z-10 flex flex-col px-2 py-8 lg:px-6">
-          <p className="text-[10px] font-light uppercase tracking-[0.42em] text-white opacity-90">
-            Maison de tradition
+        {/* GRADIENTE 2: Dal basso a sinistra (Aggiunge un riflesso del colore Primary del tema DaisyUI) */}
+        <div className="absolute inset-0 bg-linear-to-tr from-primary/20 via-transparent to-transparent opacity-80" />
+
+        <div className="relative z-10 flex flex-col px-6 py-8 lg:px-8">
+          <p className="text-[10px] font-medium uppercase tracking-[0.42em] text-primary">
+            {language === "italian"
+              ? "Naturalmente Tradizionale"
+              : "Naturally Traditional"}
           </p>
 
-          <h1 className="mt-6 mb-2 text-4xl font-light uppercase tracking-[0.12em] text-white md:text-5xl lg:text-6xl">
+          <h1 className="mt-6 mb-2 text-4xl font-light uppercase tracking-[0.12em] text-base-content md:text-5xl lg:text-6xl">
             Casa Bertini
           </h1>
         </div>
 
-        <p className="max-w-xl px-6 text-base font-light leading-relaxed tracking-[0.06em] text-white opacity-95 md:text-lg">
+        <p className="relative z-10 max-w-xl px-6 pb-8 text-base font-light leading-relaxed tracking-[0.06em] text-base-content/90 md:text-lg lg:px-8">
           {language === "italian" ? (
             <>
-              Dal 1951 <span className="text-[#d4b06a]">nel XXI secolo</span>{" "}
-              portiamo le specialità calabresi sulle tavole degli Italiani e nel
-              mondo
+              Dal 1951 portiamo le specialità calabresi sulle tavole degli
+              Italiani e nel mondo
             </>
           ) : (
             <>
-              Since 1951,{" "}
-              <span className="text-[#d4b06a]">into the 21st century</span>, we
-              bring Calabrian specialties to Italian tables and to the world
+              Since 1951 we bring Calabrian specialties to Italian tables and to
+              the world
             </>
           )}
         </p>

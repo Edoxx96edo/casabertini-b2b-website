@@ -14,11 +14,22 @@ function RebirthCollection() {
           className="text-3xl font-light uppercase tracking-[0.12em] sm:text-4xl lg:text-5xl"
           style={{ color: "#d4b06a" }}
         >
-          <span className="font-serif italic" style={{ color: "#d4b06a" }}>
-            Rebirth
+          <span
+            className={
+              language === "italian" ? "italic" : "font-serif not-italic"
+            }
+            style={{ color: "#d4b06a" }}
+          >
+            {language === "italian" ? "Collezione" : "Rebirth"}
           </span>{" "}
-          <span className="tracking-[0.18em]" style={{ color: "#d4b06a" }}>
-            Collection
+          <span
+            className={
+              "tracking-[0.18em] " +
+              (language === "italian" ? "font-serif italic" : "not-italic")
+            }
+            style={{ color: "#d4b06a" }}
+          >
+            {language === "italian" ? "Rinascita" : "Collection"}
           </span>
         </h2>
       </div>
@@ -39,16 +50,16 @@ function RebirthCollection() {
           <div className="grid gap-6 lg:grid-cols-[1.5fr_0.9fr] lg:items-start">
             <p className="text-base leading-relaxed tracking-[0.04em] text-base-content/80 md:text-lg">
               {language === "italian"
-                ? "A coronamento di oltre settant’anni di eccellenza nasce RINASCITA, la linea esclusiva di "
-                : "To crown over seventy years of excellence, RINASCITA was born, the exclusive line of "}
+                ? "La passione di Casa Bertini e la poesia di antiche ricette artigianali si fondono in RINASCITA, una tavoletta da 150 grammi pensata per "
+                : "The passion of Casa Bertini and the poetry of ancient artisanal recipes merge in RINASCITA, a 150-gram chocolate bar designed for "}
               <span className="font-serif italic text-base-content">
                 {language === "italian"
-                  ? "tavolette di cioccolato artigianali premium"
-                  : "premium artisanal chocolate bars"}
+                  ? "l'alta gastronomia internazionale"
+                  : "haute international gastronomy"}
               </span>{" "}
               {language === "italian"
-                ? "firmata Casa Bertini. Un’interpretazione contemporanea e sofisticata della grande tradizione italiana, in cui cacao di elevata purezza incontra pregiata frutta mediterranea e liquori finemente selezionati. Combinazioni sensoriali raffinate che celebrano l'alta gastronomia, affermandosi come autentico simbolo di lusso mediterraneo."
-                : "by Casa Bertini. A contemporary and sophisticated interpretation of the great Italian tradition, where high-purity cocoa meets fine Mediterranean fruit and carefully selected liqueurs. Refined sensory combinations that celebrate haute gastronomy, establishing themselves as an authentic symbol of Mediterranean luxury."}
+                ? ". Nel suo cuore, la raffinata frutta candita in pasta e i liquori selezionati creano una sublime sintesi di gusto, avvolta dallo spessore del cacao più puro. Ogni ingrediente è scelto per completare un profilo aromatico unico, capace di svelare sfumature diverse durante la degustazione. Una vera celebrazione della bontà autentica e del lusso mediterraneo, ad ogni singolo morso."
+                : ". At its heart, refined candied fruit paste and selected liqueurs create a sublime synthesis of taste, enrobed in the richness of the purest cocoa. Each ingredient is chosen to complement a unique aromatic profile, capable of revealing different nuances during tasting. A true celebration of authentic goodness and Mediterranean luxury, in every single bite."}
             </p>
 
             <div className="space-y-3 rounded-[24px] border border-base-300 bg-base-200 p-4">

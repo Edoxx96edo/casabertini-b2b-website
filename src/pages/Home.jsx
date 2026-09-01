@@ -10,10 +10,11 @@ function Home() {
       <section id="home">
         <Hero />
       </section>
-      <History />
+
       <section id="rebirth">
         <RebirthCollection />
       </section>
+      <History />
       <section id="history-collection">
         <HistoryCollection />
       </section>
