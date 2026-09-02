@@ -6,10 +6,9 @@ import umbertoBertini from "../assets/historyFiles/umberto-bertini.png";
 import { useContextLanguage } from "../contextLanguages";
 
 const familyPortraits = [
-  { name: "Antonio Bertini", image: antonioBertini },
-  { name: "Eleonora Bertini", image: eleonoraBertini },
-  { name: "Sergio Bertini", image: sergioBertini },
   { name: "Umberto Bertini", image: umbertoBertini },
+  { name: "Eleonora Bertini", image: eleonoraBertini },
+  { name: "Sergio Bertini", image: sergioBertini }
 ];
 
 function About() {
@@ -18,7 +17,7 @@ function About() {
   return (
     <section className="bg-base-200 px-4 py-10 text-base-content md:px-6 lg:px-8 lg:py-16">
       <div className="mx-auto max-w-5xl">
-        <div className="mb-10 text-center">
+        <div className="mb-10  text-center">
           <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.42em] text-base-content/70">
             Casa Bertini
           </p>
@@ -190,7 +189,7 @@ function About() {
             : "The children of founder Luigi Bertini"}
         </p>
 
-        <div className="w-2/3 mx-auto overflow-hidden rounded-[32px] border border-base-300 bg-base-100 p-3 shadow-[0_20px_50px_rgba(52,38,24,0.04)] md:p-5">
+        <div className="w-2/3 mx-auto  overflow-hidden rounded-[32px] border border-base-300 bg-base-100 p-3 shadow-[0_20px_50px_rgba(52,38,24,0.04)] md:p-5">
           <div className="items-center flex-col lg:flex-row flex justify-center gap-x-12 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {familyPortraits.map((person) => (
               <div key={person.name} className="flex flex-col items-center">

@@ -34,7 +34,7 @@ function Contacts() {
               </p>
 
               <p className="mt-2 text-lg font-medium tracking-wide text-primary md:text-xl">
-                info@sweetsinternationalsrls.com
+                info@casabertinidolci.com
               </p>
             </a>
 

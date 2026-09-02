@@ -22,14 +22,14 @@ function History() {
 
             <h5 className="mt-4 text-sm font-medium leading-relaxed text-base-content">
               {language === "italian"
-                ? "I fichi delle colline cosentine, tra i più pregiati del Sud Italia, lavorati secondo l'antica tecnica artigianale tramandata dalla tradizione locale."
-                : "The figs from the hills around Cosenza, among the finest in Southern Italy, are crafted according to an ancient artisanal technique handed down through local tradition."}
+                ? "I fichi delle colline Calabresi, tra i più pregiati del Sud Italia, lavorati secondo l'antica tecnica artigianale tramandata dalla tradizione locale."
+                : "The figs from the Calabrian hills , among the finest in Southern Italy, are crafted according to an ancient artisanal technique handed down through local tradition."}
             </h5>
 
             <p className="mt-2 text-xs italic text-base-content/70">
               {language === "italian"
-                ? "La Crocetta di Casa Bertini"
-                : `The "Crocetta" of Casa Bertini`}
+                ? "Le Crocette di Casa Bertini"
+                : `The "Crocette" of Casa Bertini`}
             </p>
           </article>
         </div>

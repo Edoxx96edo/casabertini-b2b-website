@@ -15,6 +15,7 @@ const ItalyFlag = italianLanguage.flag;
 function Navbar() {
   const { toggleLanguage, language } = useContextLanguage();
 
+  //////// THEME SETTINGS
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme || "luxury";
@@ -36,6 +37,8 @@ function Navbar() {
     setTheme((prev) => (prev === "bumblebee" ? "luxury" : "bumblebee"));
   };
 
+  //// CLICKS SETTING
+
   const handleNavClick = (e, sectionId) => {
     if (!sectionId) return;
 
@@ -53,6 +56,8 @@ function Navbar() {
     }
   };
 
+  /////////NAVIGATION ITEMS
+
   const navItems = [
     {
       name: language === "italian" ? "Home" : "Home",
@@ -61,16 +66,17 @@ function Navbar() {
     },
     {
       name:
-        language === "italian" ? "Collezione Heritage" : "Heritage Collection",
-      path: "/",
-      sectionId: "history-collection"
-    },
-    {
-      name:
-        language === "italian" ? "Collezione Rebirth" : "Rebirth Collection",
+        language === "italian" ? "Collezione Rinascita" : "Rebirth Collection",
       path: "/",
       sectionId: "rebirth"
     },
+    {
+      name:
+        language === "italian" ? "Collezione Classica" : "Heritage Collection",
+      path: "/",
+      sectionId: "history-collection"
+    },
+    ,
     {
       name: language === "italian" ? "Chi siamo" : "About",
       path: "/about"
@@ -86,17 +92,17 @@ function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 h-20 border-b border-base-200 bg-base-100/80 backdrop-blur-xl transition-colors duration-300">
+    <header className="sticky top-0 z-50  h-22 border-b border-base-200  bg-base-100/80 backdrop-blur-xl transition-colors duration-300">
       <nav className="align-element flex items-center justify-between gap-4 py-3">
         <Link
           to="/"
-          className="flex items-center gap-3"
+          className="flex items-center gap-3  "
           aria-label="Casa Bertini home"
         >
           <img
             src={Logo}
             alt="casa bertini"
-            className="h-14 w-auto object-contain sm:h-16"
+            className="rounded-2xl h-14 w-auto object-contain sm:h-16"
           />
         </Link>
 

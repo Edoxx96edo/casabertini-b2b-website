@@ -13,7 +13,7 @@ function Hero() {
   };
 
   return (
-    <div className="grid gap-10 bg-base-200 px-4 py-8 transition-colors duration-300 lg:grid-cols-2 lg:px-8 lg:py-14">
+    <div className="grid gap-10 bg-base-200 px-4 py-8 transition-colors duration-300 lg:grid-cols-2 lg:px-8 lg:py-14 ">
       <article className="relative min-h-[260px] overflow-hidden rounded-3xl border border-base-300 bg-cover bg-center bg-no-repeat shadow-xl transition-all duration-300">
         {/* GRADIENTE 1: Dall'alto (Sfuma il colore di sfondo del tema per dare profondità) */}
         <div className="absolute inset-0 bg-linear-to-b from-base-300/80 via-base-200/40 to-transparent" />
@@ -51,7 +51,7 @@ function Hero() {
       <div className="relative w-full">
         <div
           ref={carouselRef}
-          className="carousel carousel-center   space-x-3 rounded-[28px] border border-base-300 bg-base-100/80 p-3 shadow-[0_14px_35px_rgba(24,18,12,0.05)] backdrop-blur-sm"
+          className="carousel carousel-center  space-x-3 rounded-[28px] border border-base-300 bg-base-100/80 p-3 shadow-[0_14px_35px_rgba(24,18,12,0.05)] backdrop-blur-sm"
         >
           {cards.map((card) => (
             <div key={card.id} className="carousel-item">

@@ -20,7 +20,7 @@ export default function App() {
           <div className="space-y-1">
             <p className="font-semibold text-base-content">Casa Bertini</p>
             <p className="lowercase tracking-normal">
-              email: info@sweetsinternationalsrls.com
+              email: info@casabertinidolci.com
             </p>
             <p className="normal-case tracking-normal">
               tel: +(39) 0984 28 803 • Via F. Principe 21, 87100 Cosenza, Italy
@@ -37,8 +37,8 @@ export default function App() {
             <p>
               © 2026
               {language === "italian"
-                ? "Tutti i diritti riservati"
-                : "All rights reserved"}
+                ? " Tutti i diritti riservati"
+                : " All rights reserved"}
             </p>
           </div>
         </div>

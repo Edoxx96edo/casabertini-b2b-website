@@ -22,15 +22,15 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Un’interpretazione raffinata del gusto antico, con texture croccanti e un equilibrio dolce e intenso."
-          : "A refined interpretation of an ancient flavor, with a crisp texture and a sweet, intense balance.",
+          : "A refined interpretation of an ancient flavor, with a crisp texture and a sweet, intense balance."
     },
     {
-      title: "Mandorlate",
+      title: "Gocce Mandorlate",
       image: mandorlate1,
       description:
         language === "italian"
           ? "Fichi essiccati calabresi ricoperti di cioccolato extra fondente e farciti di mandorle, per un contrasto perfetto tra dolcezza, sapidità e nota intensa."
-          : "Calabrian dried figs covered in extra dark chocolate and filled with almonds, creating a perfect contrast between sweetness, savoriness, and intensity.",
+          : "Calabrian dried figs covered in extra dark chocolate and filled with almonds, creating a perfect contrast between sweetness, savoriness, and intensity."
     },
     {
       title: "Mandorlate detail",
@@ -38,7 +38,7 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Il cuore della mandorla si unisce alla dolcezza del fico secco e al cacao fondente in un gesto di pura eleganza."
-          : "The heart of the almond meets the sweetness of the dried fig and dark cocoa in an expression of pure elegance.",
+          : "The heart of the almond meets the sweetness of the dried fig and dark cocoa in an expression of pure elegance."
     },
     {
       title: "Marroni",
@@ -46,7 +46,7 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Una proposta dal profilo più intenso, pensata per chi cerca un’esperienza autentica e piena di carattere."
-          : "A more intense expression, created for those seeking an authentic experience full of character.",
+          : "A more intense expression, created for those seeking an authentic experience full of character."
     },
     {
       title: "Fichi in primo piano",
@@ -54,7 +54,7 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "La materia del fico essiccato, intensa e naturale, mette in risalto la qualità delle materie prime e la cura artigianale."
-          : "The intense and natural character of the dried fig highlights the quality of the raw materials and the artisanal care.",
+          : "The intense and natural character of the dried fig highlights the quality of the raw materials and the artisanal care."
     },
     {
       title: "Cremotti arance",
@@ -62,7 +62,7 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Cremotti di arance con un equilibrio dolce e agrumato, perfetti per un ritorno al gusto autentico della tradizione calabrese."
-          : "Orange Cremotti with a sweet and citrus balance, perfect for rediscovering the authentic taste of Calabrian tradition.",
+          : "Orange Cremotti with a sweet and citrus balance, perfect for rediscovering the authentic taste of Calabrian tradition."
     },
     {
       title: "Cremotti limone",
@@ -70,7 +70,7 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Una nota fresca e brillante, pensata per chi cerca un profilo luminoso e delicato tra la tradizione e il gusto contemporaneo."
-          : "A fresh and vibrant note, created for those seeking a bright and delicate profile between tradition and contemporary taste.",
+          : "A fresh and vibrant note, created for those seeking a bright and delicate profile between tradition and contemporary taste."
     },
     {
       title: "Delizie di ciliegie",
@@ -78,7 +78,7 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Il corpo intenso della ciliegia si combina con il rigore artigianale della ricetta per un’esperienza originale e piena di carattere."
-          : "The intense character of the cherry combines with the artisanal precision of the recipe for an original experience full of character.",
+          : "The intense character of the cherry combines with the artisanal precision of the recipe for an original experience full of character."
     },
     {
       title: "Delizie",
@@ -86,7 +86,7 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Un prodotto dall’anima rustica e raffinata, costruito per celebrare la varietà e la ricchezza del territorio calabrese."
-          : "A product with a rustic yet refined soul, created to celebrate the variety and richness of the Calabrian territory.",
+          : "A product with a rustic yet refined soul, created to celebrate the variety and richness of the Calabrian territory."
     },
     {
       title: "Mandorlate detail2",
@@ -94,8 +94,8 @@ function HistoryCollection() {
       description:
         language === "italian"
           ? "Un dettaglio elegante e materico che mette in risalto la texture e la profondità del gusto."
-          : "An elegant, textured detail that highlights the depth and character of the flavor.",
-    },
+          : "An elegant, textured detail that highlights the depth and character of the flavor."
+    }
   ];
 
   return (
@@ -104,7 +104,9 @@ function HistoryCollection() {
         <div className="mb-10">
           <div className="mb-5 flex items-center justify-between gap-4 border-b border-base-300 pb-4">
             <p className="text-xl font-medium uppercase tracking-[0.42em] text-base-content">
-              Heritage Collection
+              {language === "italian"
+                ? " Collezione Classica"
+                : " Heritage Collection"}
             </p>
 
             <span className="hidden h-px flex-1 bg-base-300 sm:block" />
@@ -166,8 +168,8 @@ function HistoryCollection() {
                     </span>{" "}
                     –{" "}
                     {language === "italian"
-                      ? "specialità realizzate con castagne, agrumi, ciliegie e mandorle del Sud Italia."
-                      : "specialties made with chestnuts, citrus fruits, cherries, and almonds from Southern Italy."}
+                      ? "specialità realizzate con castagne, ciliegie e mandorle del Sud Italia."
+                      : "specialties made with chestnuts, cherries, and almonds from Southern Italy."}
                   </span>
                 </li>
               </ul>

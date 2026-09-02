@@ -43,7 +43,9 @@ function RebirthCollection() {
               Casa Bertini
             </p>
             <span className="text-[10px] font-medium uppercase tracking-[0.28em] text-base-content/70">
-              Rebirth Collection
+              {language === "italian"
+                ? "Collezione Rinascita"
+                : "Rebirth Collection"}
             </span>
           </div>
 
