@@ -1,5 +1,5 @@
 import React from "react";
-import primoPianoFichi from "../assets/historyFiles/primo piano fichi.jpg";
+import crocette1 from "../assets/historyFiles/crocette1.jpg";
 import { useContextLanguage } from "../contextLanguages";
 
 function History() {
@@ -13,11 +13,11 @@ function History() {
             <div className="absolute inset-x-6 top-0 h-px bg-primary" />
 
             <img
-              src={primoPianoFichi}
+              src={crocette1}
               alt={
                 language === "italian" ? "Fichi calabresi" : "Calabrian figs"
               }
-              className="w-full rounded-2xl border border-base-300 object-cover"
+              className="w-full object-bottom rounded-2xl border h-80 border-base-300 object-cover"
             />
 
             <h5 className="mt-4 text-sm font-medium leading-relaxed text-base-content">
@@ -27,7 +27,9 @@ function History() {
             </h5>
 
             <p className="mt-2 text-xs italic text-base-content/70">
-              "Goccia Classica di Casa Bertini"
+              {language === "italian"
+                ? "La Crocetta di Casa Bertini"
+                : `The "Crocetta" of Casa Bertini`}
             </p>
           </article>
         </div>
@@ -48,8 +50,8 @@ function History() {
           <div className="space-y-5 text-base leading-relaxed tracking-[0.04em] text-base-content md:text-lg">
             <p>
               {language === "italian"
-                ? "La storia dell'azienda inizia nel 1951 a Cosenza, grazie all'intuizione del fondatore Luigi Bertini, che avvia un'attività dedicata alla trasformazione delle eccellenze agricole calabresi. Tra le prime produzioni figurano proprio i fichi delle colline cosentine, lavorati secondo tecniche artigianali tramandate dalla tradizione locale."
-                : "The company's story began in 1951 in Cosenza, thanks to the vision of founder Luigi Bertini, who started a business dedicated to transforming the finest agricultural products of Calabria. Among the first products were the figs from the hills around Cosenza, crafted according to artisanal techniques handed down through local tradition."}
+                ? "La storia di Casa Bertini nasce a Cosenza nel 1951, quando la visione del fondatore Luigi Bertini trasforma i migliori fichi calabresi in creazioni dolciarie d'eccellenza. Da oltre settant'anni, la maestria artigianale, la ricerca della materia prima e il legame con il territorio definiscono la nostra identità: un patrimonio che la nostra famiglia continua a custodire e innovare, unendo tradizione e raffinatezza."
+                : "The story of Casa Bertini begins in Cosenza in 1951, when founder Luigi Bertini's vision turned the finest Calabrian figs into exceptional sweet creations. For more than seventy years, artisanal craftsmanship, the pursuit of the finest ingredients, and the bond with the land have shaped our identity: a heritage that our family continues to preserve and renew, blending tradition with refinement."}
             </p>
 
             <p>

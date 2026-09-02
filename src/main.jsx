@@ -15,7 +15,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <NotFound />, // Gestione errori/pagine non trovate
     children: [
       {
         index: true,
@@ -35,7 +34,8 @@ const router = createBrowserRouter([
         path: "technical-info",
         element: <TechnicalInfo />
       },
-      { path: "pivacy-policy", element: <PrivacyPolicy /> }
+      { path: "privacy-policy", element: <PrivacyPolicy /> },
+      { path: "*", element: <NotFound /> } // ← 404 "vera" per rotte non esistenti
     ]
   }
 ]);

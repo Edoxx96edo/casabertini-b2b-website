@@ -54,8 +54,8 @@ function RebirthCollection() {
                 : "The passion of Casa Bertini and the poetry of ancient artisanal recipes merge in RINASCITA, a 150-gram chocolate bar designed for "}
               <span className="font-serif italic text-base-content">
                 {language === "italian"
-                  ? "l'alta gastronomia internazionale"
-                  : "haute international gastronomy"}
+                  ? "l'alta cioccolateria internazionale"
+                  : "international high-end chocolate"}
               </span>{" "}
               {language === "italian"
                 ? ". Nel suo cuore, la raffinata frutta candita in pasta e i liquori selezionati creano una sublime sintesi di gusto, avvolta dallo spessore del cacao più puro. Ogni ingrediente è scelto per completare un profilo aromatico unico, capace di svelare sfumature diverse durante la degustazione. Una vera celebrazione della bontà autentica e del lusso mediterraneo, ad ogni singolo morso."

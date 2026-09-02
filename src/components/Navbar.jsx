@@ -6,7 +6,7 @@ import ThemeToggleIcon from "./ThemeToggleIcon";
 import {
   italianLanguage,
   englishLanguage,
-  EnglandFlag,
+  EnglandFlag
 } from "../assets/flags/flags.jsx";
 import { useContextLanguage } from "../contextLanguages.jsx";
 
@@ -17,7 +17,7 @@ function Navbar() {
 
   const getInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme");
-    return savedTheme || "bumblebee";
+    return savedTheme || "luxury";
   };
 
   const [theme, setTheme] = useState(getInitialTheme);
@@ -28,7 +28,7 @@ function Navbar() {
     localStorage.setItem("theme", theme);
     console.log(
       "Tema attuale nel DOM:",
-      document.documentElement.getAttribute("data-theme"),
+      document.documentElement.getAttribute("data-theme")
     );
   }, [theme]);
 
@@ -57,32 +57,32 @@ function Navbar() {
     {
       name: language === "italian" ? "Home" : "Home",
       path: "/",
-      sectionId: "home",
+      sectionId: "home"
     },
     {
       name:
         language === "italian" ? "Collezione Heritage" : "Heritage Collection",
       path: "/",
-      sectionId: "history-collection",
+      sectionId: "history-collection"
     },
     {
       name:
         language === "italian" ? "Collezione Rebirth" : "Rebirth Collection",
       path: "/",
-      sectionId: "rebirth",
+      sectionId: "rebirth"
     },
     {
       name: language === "italian" ? "Chi siamo" : "About",
-      path: "/about",
+      path: "/about"
     },
     {
       name: language === "italian" ? "Info Tecniche" : "Technical Info",
-      path: "/technical-info",
+      path: "/technical-info"
     },
     {
       name: language === "italian" ? "Contatti" : "Contacts",
-      path: "/contacts",
-    },
+      path: "/contacts"
+    }
   ];
 
   return (
