@@ -48,10 +48,10 @@ function Hero() {
         </p>
       </article>
 
-      <div className="relative max-w-120">
+      <div className="relative w-full md:max-w-120">
         <div
           ref={carouselRef}
-          className="carousel carousel-center h-90 w-120 space-x-3 rounded-[28px] border border-base-300 bg-base-100/80 p-3 shadow-[0_14px_35px_rgba(24,18,12,0.05)] backdrop-blur-sm"
+          className="carousel carousel-center h-auto w-full space-x-3 rounded-[28px] border border-base-300 bg-base-100/80 p-3 shadow-[0_14px_35px_rgba(24,18,12,0.05)] backdrop-blur-sm md:h-90 md:w-120"
         >
           {cards.map((card) => (
             <div key={card.id} className="carousel-item">
