@@ -11,7 +11,7 @@ export default function App() {
 
       <Navbar />
 
-      <main className="flex w-full h-full flex-1 flex-col">
+      <main className=" align-element  min-w-sm flex w-full h-full flex-1 flex-col ">
         <Outlet />
       </main>
 

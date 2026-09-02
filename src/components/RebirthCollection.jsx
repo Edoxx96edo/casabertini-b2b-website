@@ -138,8 +138,13 @@ function RebirthCollection() {
           </a>
         </div>
 
-        <div className="border border-base-300 bg-base-100 p-1 shadow-md transition-colors duration-300">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3 border border-base-300/50 bg-base-200 p-4">
+        <div className="relative overflow-hidden rounded-[32px] border border-base-300/60 bg-base-300 p-6 shadow-[0_25px_60px_rgba(24,18,12,0.18)] transition-colors duration-300 sm:p-8 md:p-12">
+          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,176,106,0.08),transparent_60%)]" />
+
+          <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+          <div className="pointer-events-none absolute inset-x-12 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+
+          <div className="relative grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 xl:grid-cols-3">
             {cards.map((card) => {
               const { id, image, title, titolo } = card;
               return (
