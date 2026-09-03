@@ -92,7 +92,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50  h-22 border-b border-base-200  bg-base-100/80 backdrop-blur-xl transition-colors duration-300">
+    <header className="sticky top-0 z-50  h-21 border-b border-base-200  bg-base-100/80 backdrop-blur-xl transition-colors duration-300">
       <nav className="align-element flex items-center justify-between gap-4 py-3">
         <Link
           to="/"

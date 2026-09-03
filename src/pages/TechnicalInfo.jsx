@@ -57,7 +57,7 @@ function TechnicalInfo() {
               </p>
 
               <p className="mt-3 text-3xl font-light tracking-[0.08em] text-base-content">
-                1,800 m²
+                1800 m²
               </p>
             </div>
 
@@ -67,7 +67,7 @@ function TechnicalInfo() {
               </p>
 
               <p className="mt-3 text-3xl font-light tracking-[0.08em] text-base-content">
-                1,000–3,000
+                1000–3000
               </p>
 
               <p className="mt-2 text-xs uppercase tracking-[0.22em] text-[#d4b06a]">
@@ -199,29 +199,29 @@ function TechnicalInfo() {
                 language === "italian" ? "Selezione" : "Selection",
                 language === "italian"
                   ? "Scelta accurata degli ingredienti e delle materie prime italiane."
-                  : "Careful choice of Italian ingredients and raw materials.",
+                  : "Careful choice of Italian ingredients and raw materials."
               ],
               [
                 "02",
                 language === "italian" ? "Preparazione" : "Preparation",
                 language === "italian"
                   ? "Lavorazione precisa studiata per preservare aroma e consistenza."
-                  : "Precise handling designed to preserve aroma and consistency.",
+                  : "Precise handling designed to preserve aroma and consistency."
               ],
               [
                 "03",
                 language === "italian" ? "Produzione" : "Production",
                 language === "italian"
                   ? "Processi controllati che rispettano gli autentici metodi artigianali."
-                  : "Controlled processes that respect authentic artisanal methods.",
+                  : "Controlled processes that respect authentic artisanal methods."
               ],
               [
                 "04",
                 language === "italian" ? "Controllo finale" : "Final check",
                 language === "italian"
                   ? "Attenta verifica prima della consegna, per garantire l'eccellenza."
-                  : "Careful inspection before delivery, to guarantee excellence.",
-              ],
+                  : "Careful inspection before delivery, to guarantee excellence."
+              ]
             ].map(([number, title, text]) => (
               <div
                 key={number}

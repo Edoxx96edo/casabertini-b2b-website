@@ -22,8 +22,8 @@ function History() {
 
             <h5 className="mt-4 text-sm font-medium leading-relaxed text-base-content">
               {language === "italian"
-                ? "I fichi delle colline Calabresi, tra i più pregiati del Sud Italia, lavorati secondo l'antica tecnica artigianale tramandata dalla tradizione locale."
-                : "The figs from the Calabrian hills , among the finest in Southern Italy, are crafted according to an ancient artisanal technique handed down through local tradition."}
+                ? "I fichi delle colline Calabresi, tra i più pregiati del mondo, lavorati secondo l'antica tecnica artigianale tramandata dalla tradizione locale."
+                : "The figs from the Calabrian hills , among the finest in The world, are crafted according to an ancient artisanal technique handed down through local tradition."}
             </h5>
 
             <p className="mt-2 text-xs italic text-base-content/70">

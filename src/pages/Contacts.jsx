@@ -26,7 +26,7 @@ function Contacts() {
 
           <div className="mt-10 space-y-4">
             <a
-              href="mailto:info@sweetsinternationalsrls.com"
+              href="mailto:info@casabertinidolci.com"
               className="block wrap-break-word rounded-2xl border border-base-300 bg-base-200 px-6 py-5 transition hover:border-primary hover:bg-base-300"
             >
               <p className="text-xs uppercase tracking-[0.3em] text-base-content/50">
@@ -48,6 +48,11 @@ function Contacts() {
 
               <p className="mt-2 text-lg font-medium tracking-wide text-base-content md:text-xl">
                 +39 0984 28 803
+              </p>
+              <p className="mt-1 text-sm italic tracking-wide text-base-content/50">
+                {language === "italian"
+                  ? "da telefono clicca per chiamare"
+                  : "tap to call (mobile only)"}
               </p>
             </a>
           </div>
