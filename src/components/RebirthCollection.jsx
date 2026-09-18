@@ -52,8 +52,8 @@ function RebirthCollection() {
           <div className="grid gap-6 lg:grid-cols-[1.5fr_0.9fr] lg:items-start">
             <p className="text-base leading-relaxed tracking-[0.04em] text-base-content/80 md:text-lg">
               {language === "italian"
-                ? "La passione di Casa Bertini e la poesia di antiche ricette artigianali si fondono in RINASCITA, una tavoletta da 150 grammi pensata per "
-                : "The passion of Casa Bertini and the poetry of ancient artisanal recipes merge in RINASCITA, a 150-gram chocolate bar designed for "}
+                ? "La passione di Casa Bertini e la poesia di antiche ricette artigianali si fondono in RINASCITA, una tavoletta da 160 grammi pensata per "
+                : "The passion of Casa Bertini and the poetry of ancient artisanal recipes merge in RINASCITA, a 160-gram chocolate bar designed for "}
               <span className="font-serif italic text-base-content">
                 {language === "italian"
                   ? "l'alta cioccolateria internazionale"
@@ -126,13 +126,46 @@ function RebirthCollection() {
           <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
           <div className="pointer-events-none absolute inset-x-12 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-          <div className="relative grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-10 xl:grid-cols-3">
-            {cards.map((card) => {
-              const { id, image, title, titolo } = card;
-              return (
-                <Card key={id} image={image} title={title} titolo={titolo} />
-              );
-            })}
+          <div className="relative overflow-hidden rounded-[28px] border border-base-content/10 bg-base-100/45 p-5 shadow-[0_24px_70px_rgba(31,24,18,0.08)] backdrop-blur-sm sm:p-7 lg:p-8">
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+
+            <div className="relative mb-8 flex flex-col gap-6 border-b border-base-content/10 pb-6 lg:flex-row lg:items-end lg:justify-between">
+              <div className="max-w-2xl">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-primary">
+                  01 — {language === "italian" ? "Catalogo prodotti" : "Product catalogue"}
+                </p>
+                <h3 className="mt-3 font-serif text-2xl text-base-content sm:text-3xl">
+                  {language === "italian" ? "La collezione Rinascita" : "The Rinascita collection"}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-base-content/65 sm:text-base">
+                  {language === "italian"
+                    ? "Nove referenze pensate per presentare la collezione con chiarezza, coerenza e riconoscibilità di marca."
+                    : "Nine references designed to present the collection with clarity, consistency and strong brand recognition."}
+                </p>
+              </div>
+
+              <dl className="grid grid-cols-2 gap-x-8 gap-y-3 border-l-0 border-base-content/10 text-right sm:grid-cols-2 lg:border-l lg:pl-8">
+                <div>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-base-content/50">
+                    {language === "italian" ? "Referenze" : "References"}
+                  </dt>
+                  <dd className="mt-1 font-serif text-xl text-base-content">{cards.length}</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] font-medium uppercase tracking-[0.18em] text-base-content/50">
+                    {language === "italian" ? "Formato" : "Format"}
+                  </dt>
+                  <dd className="mt-1 font-serif text-xl text-base-content">160 g</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div className="relative grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {cards.map((card, index) => {
+                const { id, image, title, titolo } = card;
+                return <Card key={id} image={image} title={title} titolo={titolo} index={index} />;
+              })}
+            </div>
           </div>
         </div>
       </div>
