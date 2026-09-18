@@ -1,11 +1,8 @@
 import React from "react";
 import Card from "./Card";
 import { cards } from "../data";
-import catalogPdf from "../assets/Catalog Rebirth Collection.pdf";
-import logisticaTavolette from "../assets/logistics/LogisticaTavolette.pdf";
-import schedatecnicaitaliano from "../assets/technical data/Schede_Tecniche_Italiano_valori .pdf";
-import schedatecnicainglese from "../assets/technical data/Schede tecniche inglese con valori .pdf";
 import { useContextLanguage } from "../contextLanguages";
+import DownloadSection from "./DownloadSection";
 
 function RebirthCollection() {
   const { language } = useContextLanguage();
@@ -121,40 +118,7 @@ function RebirthCollection() {
       </div>
 
       <div className="align-element">
-        <div className="mt-10 mb-10 flex flex-wrap justify-center gap-6 md:gap-12">
-          <a
-            href={catalogPdf}
-            download="Catalog Rebirth Collection.pdf"
-            className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-secondary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-base-300"
-          >
-            {language === "italian"
-              ? "Scarica Catalogo Completo"
-              : "Download Full Catalog"}
-          </a>
-
-          <a
-            href={
-              language === "italian"
-                ? schedatecnicaitaliano
-                : schedatecnicainglese
-            }
-            download="Technical Data Chocolate Bars.pdf"
-            className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-secondary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-base-300"
-          >
-            {language === "italian"
-              ? "Scarica Scheda Tecnica"
-              : "Download Technical Datasheet"}
-          </a>
-          <a
-            href={logisticaTavolette}
-            download="LogisticCasaBertini.pdf"
-            className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-secondary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-base-300"
-          >
-            {language === "italian"
-              ? "Scarica la logistica"
-              : "Download Logistic"}
-          </a>
-        </div>
+        <DownloadSection />
 
         <div className="relative overflow-hidden rounded-[32px] border border-base-300/60 bg-base-300 p-6 shadow-[0_25px_60px_rgba(24,18,12,0.18)] transition-colors duration-300 sm:p-8 md:p-12">
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(212,176,106,0.08),transparent_60%)]" />

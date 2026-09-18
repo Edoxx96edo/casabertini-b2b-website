@@ -1,6 +1,7 @@
 import React from "react";
 import sedeCasaBertini from "../assets/SedeCasaBertini.jpg";
 import { useContextLanguage } from "../contextLanguages";
+import DownloadSection from "../components/DownloadSection";
 
 function TechnicalInfo() {
   const { language } = useContextLanguage();
@@ -148,6 +149,7 @@ function TechnicalInfo() {
             </p>
           </article>
         </div>
+        <DownloadSection />
 
         <div className="mt-12 overflow-hidden rounded-[32px] border border-[#d9c5a3] bg-base-100 shadow-[0_18px_40px_rgba(50,35,25,0.04)]">
           <div className="grid gap-0 md:grid-cols-[1.1fr_0.9fr]">
