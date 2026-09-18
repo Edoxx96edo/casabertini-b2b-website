@@ -9,11 +9,13 @@ import {
   EnglandFlag
 } from "../assets/flags/flags.jsx";
 import { useContextLanguage } from "../contextLanguages.jsx";
+import { useNavigate } from "react-router-dom";
 
 const ItalyFlag = italianLanguage.flag;
 
 function Navbar() {
   const { toggleLanguage, language } = useContextLanguage();
+  const navigate = useNavigate();
 
   //////// THEME SETTINGS
   const getInitialTheme = () => {
@@ -39,21 +41,36 @@ function Navbar() {
 
   //// CLICKS SETTING
 
-  const handleNavClick = (e, sectionId) => {
-    if (!sectionId) return;
+  const handleNavClick = (e, sectionId, path) => {
+    e.preventDefault();
 
-    if (location.pathname === "/") {
-      e.preventDefault();
+    // Se non c'è una section, naviga semplicemente al path
+    if (!sectionId) {
+      navigate(path);
+      return;
+    }
+
+    // Se siamo già nella home, facciamo direttamente lo scroll
+    if (location.pathname === "/" && path === "/") {
       if (sectionId === "home") {
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
+
       const element = document.getElementById(sectionId);
+
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+
       return;
     }
+
+    // Se siamo in un'altra pagina, navighiamo
+    // e passiamo alla nuova pagina la section da raggiungere
+    navigate(path, {
+      state: { sectionId }
+    });
   };
 
   /////////NAVIGATION ITEMS
@@ -121,13 +138,13 @@ function Navbar() {
           >
             {navItems.map((item) => (
               <li key={item.name}>
-                <Link
+                <button
                   to={item.path}
-                  onClick={(e) => handleNavClick(e, item.sectionId)}
+                  onClick={(e) => handleNavClick(e, item.sectionId, item.path)}
                   className="rounded-xl px-3 py-2 text-sm tracking-[0.12em] text-base-content uppercase hover:bg-base-200"
                 >
                   {item.name}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
@@ -137,13 +154,12 @@ function Navbar() {
           <ul className="menu menu-horizontal items-center gap-1 rounded-full border border-base-200 bg-base-100/70 p-2 shadow-sm backdrop-blur-md">
             {navItems.map((item) => (
               <li key={item.name}>
-                <Link
-                  to={item.path}
-                  onClick={(e) => handleNavClick(e, item.sectionId)}
+                <button
+                  onClick={(e) => handleNavClick(e, item.sectionId, item.path)}
                   className="rounded-full px-4 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-base-content hover:bg-base-200"
                 >
                   {item.name}
-                </Link>
+                </button>
               </li>
             ))}
           </ul>
