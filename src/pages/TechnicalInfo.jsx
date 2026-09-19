@@ -7,10 +7,10 @@ function TechnicalInfo() {
   const { language } = useContextLanguage();
 
   return (
-    <section className="py-16 md:py-20  bg-base-200">
+    <section className="lux-section lux-grid-line py-16 md:py-20  bg-base-200">
       <div className="align-element bg-base-200">
         <div className="mb-12 text-center">
-          <p className="text-[10px] font-medium uppercase tracking-[0.42em] text-[#d4b06a]">
+          <p className="text-[10px] font-medium uppercase tracking-[0.42em] text-primary">
             {language === "italian"
               ? "Informazioni tecniche"
               : "Technical information"}
@@ -18,15 +18,15 @@ function TechnicalInfo() {
 
           <h1 className="mt-4 text-3xl font-light uppercase tracking-[0.12em] text-base-content sm:text-4xl md:text-5xl">
             {language === "italian" ? "Struttura" : "Production"}{" "}
-            <span className="font-serif italic text-[#d4b06a]">
+            <span className="font-serif italic text-primary">
               {language === "italian" ? "produttiva" : "structure"}
             </span>
           </h1>
         </div>
 
         <div className="grid items-start gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <article className="rounded-[32px] border border-[#d9c5a3] bg-base-100 p-6 shadow-[0_18px_40px_rgba(50,35,25,0.04)] md:p-8">
-            <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#d4b06a]">
+          <article className="lux-card rounded-[32px] border border-base-content/10 bg-base-100/75 p-6 shadow-[0_18px_40px_rgba(50,35,25,0.04)] md:p-8">
+            <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-primary">
               Casa Bertini
             </p>
 
@@ -52,8 +52,8 @@ function TechnicalInfo() {
           </article>
 
           <div className="space-y-4">
-            <div className="rounded-[28px] border border-[#d9c5a3] bg-base-100 p-5 shadow-[0_18px_35px_rgba(50,35,25,0.04)]">
-              <p className="text-[10px] uppercase tracking-[0.32em] text-[#d4b06a]">
+            <div className="lux-card rounded-[28px] border border-base-content/10 bg-base-100/75 p-5 shadow-[0_18px_35px_rgba(50,35,25,0.04)]">
+              <p className="text-[10px] uppercase tracking-[0.32em] text-primary">
                 {language === "italian" ? "Laboratorio" : "Workshop"}
               </p>
 
@@ -62,8 +62,8 @@ function TechnicalInfo() {
               </p>
             </div>
 
-            <div className="rounded-[28px] border border-[#d9c5a3] bg-base-100 p-5 shadow-[0_18px_35px_rgba(50,35,25,0.04)]">
-              <p className="text-[10px] uppercase tracking-[0.32em] text-[#d4b06a]">
+            <div className="lux-card rounded-[28px] border border-base-content/10 bg-base-100/75 p-5 shadow-[0_18px_35px_rgba(50,35,25,0.04)]">
+              <p className="text-[10px] uppercase tracking-[0.32em] text-primary">
                 {language === "italian" ? "Capacità" : "Capacity"}
               </p>
 
@@ -71,13 +71,13 @@ function TechnicalInfo() {
                 1000–3000
               </p>
 
-              <p className="mt-2 text-xs uppercase tracking-[0.22em] text-[#d4b06a]">
+              <p className="mt-2 text-xs uppercase tracking-[0.22em] text-primary">
                 {language === "italian" ? "unità/giorno" : "units/day"}
               </p>
             </div>
 
-            <div className="rounded-[28px] border border-[#d9c5a3] bg-base-100 p-5 shadow-[0_18px_35px_rgba(50,35,25,0.04)]">
-              <p className="text-[10px] uppercase tracking-[0.32em] text-[#d4b06a]">
+            <div className="lux-card rounded-[28px] border border-base-content/10 bg-base-100/75 p-5 shadow-[0_18px_35px_rgba(50,35,25,0.04)]">
+              <p className="text-[10px] uppercase tracking-[0.32em] text-primary">
                 {language === "italian" ? "Qualità" : "Quality"}
               </p>
 
@@ -85,7 +85,7 @@ function TechnicalInfo() {
                 100%
               </p>
 
-              <p className="mt-2 text-xs uppercase tracking-[0.22em] text-[#d4b06a]">
+              <p className="mt-2 text-xs uppercase tracking-[0.22em] text-primary">
                 {language === "italian"
                   ? "controllo delle fasi"
                   : "phase control"}
@@ -95,8 +95,8 @@ function TechnicalInfo() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <article className="rounded-[28px] border border-[#d9c5a3] bg-base-100 p-6">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-[#d4b06a]">
+          <article className="lux-card rounded-[28px] border border-base-content/10 bg-base-100/75 p-6">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-primary">
               01
             </p>
 
@@ -113,8 +113,8 @@ function TechnicalInfo() {
             </p>
           </article>
 
-          <article className="rounded-[28px] border border-[#d9c5a3] bg-base-100 p-6">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-[#d4b06a]">
+          <article className="lux-card rounded-[28px] border border-base-content/10 bg-base-100/75 p-6">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-primary">
               02
             </p>
 
@@ -131,8 +131,8 @@ function TechnicalInfo() {
             </p>
           </article>
 
-          <article className="rounded-[28px] border border-[#d9c5a3] bg-base-100 p-6">
-            <p className="text-[10px] uppercase tracking-[0.32em] text-[#d4b06a]">
+          <article className="lux-card rounded-[28px] border border-base-content/10 bg-base-100/75 p-6">
+            <p className="text-[10px] uppercase tracking-[0.32em] text-primary">
               03
             </p>
 
@@ -151,7 +151,7 @@ function TechnicalInfo() {
         </div>
         <DownloadSection />
 
-        <div className="mt-12 overflow-hidden rounded-[32px] border border-[#d9c5a3] bg-base-100 shadow-[0_18px_40px_rgba(50,35,25,0.04)]">
+        <div className="lux-card mt-12 overflow-hidden rounded-[32px] border border-base-content/10 bg-base-100/75 shadow-[0_18px_40px_rgba(50,35,25,0.04)]">
           <div className="grid gap-0 md:grid-cols-[1.1fr_0.9fr]">
             <div className="h-[360px] overflow-hidden">
               <img
@@ -162,7 +162,7 @@ function TechnicalInfo() {
             </div>
 
             <div className="flex flex-col justify-center p-6 md:p-8">
-              <p className="text-[10px] uppercase tracking-[0.42em] text-[#d4b06a]">
+              <p className="text-[10px] uppercase tracking-[0.42em] text-primary">
                 {language === "italian" ? "Sede" : "Headquarters"}
               </p>
 
@@ -181,9 +181,9 @@ function TechnicalInfo() {
           </div>
         </div>
 
-        <div className="mt-12 rounded-[32px] border border-[#d9c5a3] bg-base-300 p-6 shadow-[0_18px_40px_rgba(50,35,25,0.04)] md:p-8">
+        <div className="lux-card mt-12 rounded-[32px] border border-[#d9c5a3] bg-base-300 p-6 shadow-[0_18px_40px_rgba(50,35,25,0.04)] md:p-8">
           <div className="mb-6 border-b border-[#e7dcc7] pb-4">
-            <p className="text-[10px] uppercase tracking-[0.42em] text-[#d4b06a]">
+            <p className="text-[10px] uppercase tracking-[0.42em] text-primary">
               {language === "italian" ? "Processo" : "Process"}
             </p>
 
@@ -227,9 +227,9 @@ function TechnicalInfo() {
             ].map(([number, title, text]) => (
               <div
                 key={number}
-                className="rounded-[24px] border-3 border-amber-200 bg-base-300 p-4"
+                className="rounded-[20px] border border-base-content/10 bg-base-100/60 p-5"
               >
-                <p className="text-[10px] uppercase tracking-[0.32em] text-[#d4b06a]">
+                <p className="text-[10px] uppercase tracking-[0.32em] text-primary">
                   {number}
                 </p>
 

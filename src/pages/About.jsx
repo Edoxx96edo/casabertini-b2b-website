@@ -14,8 +14,8 @@ function About() {
   const { language } = useContextLanguage();
 
   return (
-    <section className="bg-base-200 px-4 py-10 text-base-content md:px-6 lg:px-8 lg:py-16">
-      <div className="mx-auto max-w-5xl">
+    <section className="lux-section lux-grid-line bg-base-200 px-4 py-10 text-base-content md:px-6 lg:px-8 lg:py-16">
+      <div className="lux-card mx-auto max-w-5xl rounded-[30px] border border-base-content/10 bg-base-100/60 p-6 shadow-[0_22px_60px_rgba(24,18,12,0.08)] sm:p-9">
         <div className="mb-10 text-center">
           <p className="mb-3 text-[10px] font-medium uppercase tracking-[0.42em] text-base-content/70">
             Casa Bertini
@@ -135,7 +135,7 @@ function About() {
             : "The children of founder Luigi Bertini"}
         </p>
 
-        <div className="mx-auto w-2/3 overflow-hidden rounded-[32px] border border-base-300 bg-base-100 p-3 shadow-[0_20px_50px_rgba(52,38,24,0.04)] md:p-5">
+        <div className="mx-auto w-full max-w-3xl overflow-hidden rounded-[24px] border border-base-content/10 bg-base-200/40 p-4 md:p-5">
           <div className="flex flex-col items-center justify-center gap-x-12 overflow-x-auto pb-2 lg:flex-row [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {familyPortraits.map((person) => (
               <div key={person.name} className="flex flex-col items-center">
@@ -156,7 +156,7 @@ function About() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 max-w-4xl space-y-8">
+      <div className="lux-card mx-auto mt-10 max-w-4xl space-y-8 rounded-[30px] border border-base-content/10 bg-base-100/60 p-6 shadow-[0_22px_60px_rgba(24,18,12,0.08)] sm:p-9">
         <div>
           <p className="mb-2 text-center text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             {language === "italian"
@@ -178,7 +178,7 @@ function About() {
           </p>
 
           <ul className="grid grid-cols-1 gap-4 list-none sm:grid-cols-2 md:grid-cols-3">
-            <li className="rounded-lg border border-base-300 bg-base-100 p-4">
+            <li className="rounded-[18px] border border-base-content/10 bg-base-200/45 p-5 transition-colors hover:border-primary/50">
               <p className="text-sm font-semibold text-base-content">
                 {language === "italian" ? "75 anni" : "75 years"}
               </p>
@@ -189,7 +189,7 @@ function About() {
               </p>
             </li>
 
-            <li className="rounded-lg border border-base-300 bg-base-100 p-4">
+            <li className="rounded-[18px] border border-base-content/10 bg-base-200/45 p-5 transition-colors hover:border-primary/50">
               <p className="text-sm font-semibold text-base-content">
                 {language === "italian" ? "Artigianalità" : "Craftsmanship"}
               </p>
@@ -200,7 +200,7 @@ function About() {
               </p>
             </li>
 
-            <li className="rounded-lg border border-base-300 bg-base-100 p-4">
+            <li className="rounded-[18px] border border-base-content/10 bg-base-200/45 p-5 transition-colors hover:border-primary/50">
               <p className="text-sm font-semibold text-base-content">
                 {language === "italian" ? "Materie prime" : "Raw materials"}
               </p>
@@ -211,7 +211,7 @@ function About() {
               </p>
             </li>
 
-            <li className="rounded-lg border border-base-300 bg-base-100 p-4">
+            <li className="rounded-[18px] border border-base-content/10 bg-base-200/45 p-5 transition-colors hover:border-primary/50">
               <p className="text-sm font-semibold text-base-content">
                 {language === "italian" ? "Specialità" : "Specialities"}
               </p>
@@ -222,7 +222,7 @@ function About() {
               </p>
             </li>
 
-            <li className="rounded-lg border border-base-300 bg-base-100 p-4">
+            <li className="rounded-[18px] border border-base-content/10 bg-base-200/45 p-5 transition-colors hover:border-primary/50">
               <p className="text-sm font-semibold text-base-content">
                 Made in Italy
               </p>
@@ -233,7 +233,7 @@ function About() {
               </p>
             </li>
 
-            <li className="rounded-lg border border-base-300 bg-base-100 p-4">
+            <li className="rounded-[18px] border border-base-content/10 bg-base-200/45 p-5 transition-colors hover:border-primary/50">
               <p className="text-sm font-semibold text-base-content">
                 {language === "italian" ? "Identità" : "Identity"}
               </p>

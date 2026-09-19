@@ -11,7 +11,6 @@ function Home() {
 
   useEffect(() => {
     const sectionId = location.state?.sectionId;
-
     if (!sectionId) return;
 
     if (sectionId === "home") {
@@ -19,23 +18,19 @@ function Home() {
       return;
     }
 
-    const element = document.getElementById(sectionId);
-
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   }, [location]);
+
   return (
     <>
-      <section id="home">
+      <section id="home" className="lux-section">
         <Hero />
       </section>
-
-      <section id="rebirth">
+      <section id="rebirth" className="lux-section">
         <RebirthCollection />
       </section>
       <History />
-      <section id="history-collection">
+      <section id="history-collection" className="lux-section">
         <HistoryCollection />
       </section>
       <Location />

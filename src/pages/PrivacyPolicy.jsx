@@ -6,9 +6,9 @@ function PrivacyPolicy() {
   const { language } = useContextLanguage();
 
   return (
-    <section className="bg-base-200 py-6 transition-colors duration-300 md:py-20">
+    <section className="lux-section lux-grid-line bg-base-200 py-6 transition-colors duration-300 md:py-20">
       <div className="align-element">
-        <div className="mb-8 text-center">
+        <div className="mx-auto mb-10 max-w-2xl text-center">
           <p className="text-md font-medium uppercase tracking-[0.42em] text-base-content">
             {language === "italian"
               ? "Informazioni Legali"
@@ -20,8 +20,8 @@ function PrivacyPolicy() {
           </h3>
         </div>
 
-        <div className="mx-auto grid max-w-4xl gap-6">
-          <article className="rounded-[22px] border border-base-300 bg-base-100 p-6 shadow-md transition-colors duration-300">
+        <div className="mx-auto grid max-w-4xl gap-4">
+          <article className="lux-card rounded-[24px] border border-base-content/10 bg-base-100/70 p-6 shadow-[0_18px_45px_rgba(24,18,12,0.07)] sm:p-8 transition-colors duration-300">
             <p className="text-[10px] uppercase tracking-[0.42em] text-base-content">
               {language === "italian"
                 ? "Titolare del trattamento"
@@ -39,7 +39,7 @@ function PrivacyPolicy() {
             </p>
           </article>
 
-          <article className="rounded-[22px] border border-base-300 bg-base-100 p-6 shadow-md transition-colors duration-300">
+          <article className="lux-card rounded-[24px] border border-base-content/10 bg-base-100/70 p-6 shadow-[0_18px_45px_rgba(24,18,12,0.07)] sm:p-8 transition-colors duration-300">
             <p className="text-[10px] uppercase tracking-[0.42em] text-base-content">
               {language === "italian" ? "Uso dei Cookie" : "Cookie Usage"}
             </p>
@@ -57,7 +57,7 @@ function PrivacyPolicy() {
             </p>
           </article>
 
-          <article className="rounded-[22px] border border-base-300 bg-base-100 p-6 shadow-md transition-colors duration-300">
+          <article className="lux-card rounded-[24px] border border-base-content/10 bg-base-100/70 p-6 shadow-[0_18px_45px_rgba(24,18,12,0.07)] sm:p-8 transition-colors duration-300">
             <p className="text-[10px] uppercase tracking-[0.42em] text-base-content">
               {language === "italian" ? "Dati raccolti" : "Collected Data"}
             </p>
@@ -84,7 +84,7 @@ function PrivacyPolicy() {
             </ul>
           </article>
 
-          <article className="rounded-[22px] border border-base-300 bg-base-100 p-6 shadow-md transition-colors duration-300">
+          <article className="lux-card rounded-[24px] border border-base-content/10 bg-base-100/70 p-6 shadow-[0_18px_45px_rgba(24,18,12,0.07)] sm:p-8 transition-colors duration-300">
             <p className="text-[10px] uppercase tracking-[0.42em] text-base-content">
               {language === "italian"
                 ? "Diritti dell'utente"
@@ -108,7 +108,7 @@ function PrivacyPolicy() {
         <div className="mt-10 flex justify-center">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-base-content shadow-[0_14px_30px_rgba(52,38,24,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#f4e8d6,#e4ceb0)] hover:shadow-[0_18px_35px_rgba(52,38,24,0.12)]"
+            className="lux-action bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-base-content shadow-[0_14px_30px_rgba(52,38,24,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#f4e8d6,#e4ceb0)] hover:shadow-[0_18px_35px_rgba(52,38,24,0.12)]"
           >
             {language === "italian" ? "Torna alla Home" : "Back to Home"}
           </Link>

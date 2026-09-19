@@ -99,9 +99,9 @@ function HistoryCollection() {
   ];
 
   return (
-    <section className="bg-base-100 py-16 transition-colors duration-300 md:py-20">
+    <section className="lux-section lux-grid-line bg-base-100 py-16 transition-colors duration-300 md:py-20">
       <div className="align-element">
-        <div className="mb-10">
+        <div className="lux-card mb-10 rounded-[30px] border border-base-content/10 bg-base-100/60 p-5 shadow-[0_20px_55px_rgba(24,18,12,0.07)] sm:p-8">
           <div className="mb-5 flex items-center justify-between gap-4 border-b border-base-300 pb-4">
             <p className="text-xl font-medium uppercase tracking-[0.42em] text-base-content">
               {language === "italian"
@@ -186,7 +186,7 @@ function HistoryCollection() {
         </div>
 
         <div className="mt-10 mb-10 flex justify-center">
-          <button className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-base-content shadow-[0_14px_30px_rgba(52,38,24,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#f4e8d6,#e4ceb0)] hover:shadow-[0_18px_35px_rgba(52,38,24,0.12)]">
+          <button className="lux-action bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-base-content shadow-[0_14px_30px_rgba(52,38,24,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[linear-gradient(135deg,#f4e8d6,#e4ceb0)] hover:shadow-[0_18px_35px_rgba(52,38,24,0.12)]">
             {language === "italian"
               ? "Scarica il catalogo completo"
               : "Download Full Catalog"}
@@ -209,13 +209,13 @@ function HistoryCollection() {
           {galleryImages.map((item) => (
             <figure
               key={item.image}
-              className="group overflow-hidden rounded-[28px] border border-base-300 bg-base-100 shadow-md"
+              className="lux-card group overflow-hidden rounded-[24px] border border-base-content/10 bg-base-100/75 transition-[transform,box-shadow] duration-500 hover:-translate-y-1"
             >
               <div className="overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="h-72 w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
 

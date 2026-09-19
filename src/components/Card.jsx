@@ -8,7 +8,7 @@ function Card({ image, title, titolo, index }) {
     language === "italian" ? "Referenza" : "Product reference";
 
   return (
-    <article className="group relative h-full overflow-hidden rounded-[22px] border border-base-content/10 bg-base-100 shadow-[0_12px_30px_rgba(31,24,18,0.06)] transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_22px_50px_rgba(31,24,18,0.14)] focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-4 focus-within:ring-offset-base-300">
+    <article className="lux-card group relative h-full overflow-hidden rounded-[22px] border border-base-content/10 bg-base-100 shadow-[0_12px_30px_rgba(31,24,18,0.06)] transition-[transform,box-shadow,border-color] duration-500 ease-out hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_22px_50px_rgba(31,24,18,0.14)] focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-4 focus-within:ring-offset-base-300">
       <figure className="relative m-0 aspect-[4/5] overflow-hidden bg-base-200">
         <img
           src={image}

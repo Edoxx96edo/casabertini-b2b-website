@@ -8,76 +8,69 @@ function Hero() {
   const carouselRef = useRef(null);
 
   const scroll = (direction) => {
-    const scrollAmount = direction === "left" ? -250 : 250;
-    carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    carouselRef.current?.scrollBy({ left: direction === "left" ? -280 : 280, behavior: "smooth" });
   };
 
   return (
-    <div className="grid gap-10 bg-base-200 px-4 py-8 transition-colors duration-300 lg:grid-cols-2 lg:px-8 lg:py-14 ">
-      <article className="relative min-h-[260px] overflow-hidden rounded-3xl border border-base-300 bg-cover bg-center bg-no-repeat shadow-xl transition-all duration-300">
-        {/* GRADIENTE 1: Dall'alto (Sfuma il colore di sfondo del tema per dare profondità) */}
-        <div className="absolute inset-0 bg-linear-to-b from-base-300/80 via-base-200/40 to-transparent" />
+    <div className="lux-grid-line relative grid gap-5 py-6 md:py-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-7">
+      <article className="lux-card relative min-h-[470px] overflow-hidden rounded-[30px] p-6 sm:p-8 lg:min-h-[570px] lg:p-10">
+        <img src={imgHero} alt="Casa Bertini artisan confectionery" className="absolute inset-0 h-full w-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-base-100/95 via-base-100/70 to-base-100/10" />
+        <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-primary via-primary/30 to-transparent" />
 
-        {/* GRADIENTE 2: Dal basso a sinistra (Aggiunge un riflesso del colore Primary del tema DaisyUI) */}
-        <div className="absolute inset-0 bg-linear-to-tr from-primary/20 via-transparent to-transparent opacity-80" />
+        <div className="relative flex h-full max-w-xl flex-col justify-between">
+          <div>
+            <p className="lux-kicker">{language === "italian" ? "Dolciaria artigianale · Dal 1951" : "Artisanal confectionery · Since 1951"}</p>
+            <h1 className="lux-heading mt-7 text-5xl text-base-content sm:text-6xl lg:text-7xl">Casa<br />Bertini</h1>
+            <p className="mt-7 max-w-md text-base leading-relaxed text-base-content/75 sm:text-lg">
+              {language === "italian"
+                ? "Specialità calabresi e cioccolato d’autore, create per partner che scelgono qualità, origine e continuità."
+                : "Calabrian specialities and signature chocolate, created for partners who choose quality, provenance and consistency."}
+            </p>
+          </div>
 
-        <div className="relative z-10 flex flex-col px-6 py-8 lg:px-8">
-          <p className="text-[10px] font-medium uppercase tracking-[0.42em] text-primary">
-            {language === "italian"
-              ? "Naturalmente Tradizionale"
-              : "Naturally Traditional"}
-          </p>
-
-          <h1 className="mt-6 mb-2 text-4xl font-light uppercase tracking-[0.12em] text-base-content md:text-5xl lg:text-6xl">
-            Casa Bertini
-          </h1>
+          <div className="mt-10 grid max-w-md grid-cols-2 border-t border-base-content/15 pt-5 text-base-content">
+            <div>
+              <p className="lux-kicker">Heritage</p>
+              <p className="mt-2 font-serif text-2xl">1951</p>
+            </div>
+            <div className="border-l border-base-content/15 pl-5">
+              <p className="lux-kicker">Origin</p>
+              <p className="mt-2 font-serif text-2xl">Cosenza</p>
+            </div>
+          </div>
         </div>
-
-        <p className="relative z-10 max-w-xl px-6 pb-8 text-base font-light leading-relaxed tracking-[0.06em] text-base-content/90 md:text-lg lg:px-8">
-          {language === "italian" ? (
-            <>
-              Dal 1951 portiamo le specialità calabresi sulle tavole degli
-              Italiani e nel mondo
-            </>
-          ) : (
-            <>
-              Since 1951 we bring Calabrian specialties to Italian tables and to
-              the world
-            </>
-          )}
-        </p>
       </article>
 
-      <div className="relative w-full">
-        <div
-          ref={carouselRef}
-          className="carousel carousel-center  space-x-3 rounded-[28px] border border-base-300 bg-base-100/80 p-3 shadow-[0_14px_35px_rgba(24,18,12,0.05)] backdrop-blur-sm"
-        >
-          {cards.map((card) => (
-            <div key={card.id} className="carousel-item">
-              <img
-                src={card.image}
-                className="h-full w-32 rounded-[18px] border border-base-300 object-cover shadow-[0_10px_25px_rgba(24,18,12,0.08)] sm:w-40"
-                alt={card.title}
-              />
-            </div>
+      <aside className="lux-card relative overflow-hidden rounded-[30px] p-5 sm:p-6 lg:p-7">
+        <div className="flex items-start justify-between gap-5">
+          <div>
+            <p className="lux-kicker">{language === "italian" ? "In primo piano" : "In focus"}</p>
+            <h2 className="lux-heading mt-3 text-3xl sm:text-4xl">Rinascita</h2>
+          </div>
+          <span className="rounded-full border border-primary/40 px-3 py-1.5 text-[9px] font-bold uppercase tracking-[0.18em] text-primary">160 g</span>
+        </div>
+
+        <div ref={carouselRef} className="mt-7 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {cards.map((card, index) => (
+            <figure key={card.id} className="group relative w-[72%] shrink-0 snap-center overflow-hidden rounded-[22px] border border-base-content/10 bg-base-200 sm:w-[58%]">
+              <img src={card.image} alt={language === "italian" ? card.titolo : card.title} className="aspect-[4/5] w-full object-contain p-3 transition-transform duration-700 group-hover:scale-[1.04]" />
+              <figcaption className="border-t border-base-content/10 bg-base-100/90 px-4 py-3">
+                <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-primary">{String(index + 1).padStart(2, "0")}</p>
+                <p className="mt-1 line-clamp-2 font-serif text-sm leading-snug text-base-content">{language === "italian" ? card.titolo : card.title}</p>
+              </figcaption>
+            </figure>
           ))}
         </div>
 
-        <button
-          onClick={() => scroll("left")}
-          className="btn btn-circle btn-sm absolute left-3 top-1/2 -translate-y-1/2 border border-[#d9c5a3] bg-base-100/90 text-[#9d6b2d] shadow-[0_10px_25px_rgba(24,18,12,0.12)] backdrop-blur-md hover:bg-[#d4b06a] hover:text-white hover:border-[#d4b06a]"
-        >
-          ❮
-        </button>
-
-        <button
-          onClick={() => scroll("right")}
-          className="btn btn-circle btn-sm absolute right-3 top-1/2 -translate-y-1/2 border border-[#d9c5a3] bg-base-100/90 text-[#9d6b2d] shadow-[0_10px_25px_rgba(24,18,12,0.12)] backdrop-blur-md hover:bg-[#d4b06a] hover:text-white hover:border-[#d4b06a]"
-        >
-          ❯
-        </button>
-      </div>
+        <div className="mt-2 flex items-center justify-between border-t border-base-content/10 pt-4">
+          <p className="text-xs text-base-content/60">{language === "italian" ? "Scopri la collezione" : "Discover the collection"}</p>
+          <div className="flex gap-2">
+            <button type="button" onClick={() => scroll("left")} className="btn btn-circle btn-sm border-base-content/10 bg-base-100 hover:border-primary hover:bg-primary hover:text-primary-content" aria-label="Previous product">←</button>
+            <button type="button" onClick={() => scroll("right")} className="btn btn-circle btn-sm border-base-content/10 bg-base-100 hover:border-primary hover:bg-primary hover:text-primary-content" aria-label="Next product">→</button>
+          </div>
+        </div>
+      </aside>
     </div>
   );
 }

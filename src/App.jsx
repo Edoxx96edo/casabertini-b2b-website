@@ -1,45 +1,36 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { useContextLanguage } from "./contextLanguages";
-import { Link } from "react-router-dom";
 
 export default function App() {
   const { language } = useContextLanguage();
-  return (
-    <div className="flex min-h-dvh flex-col bg-base-200 text-base-content">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(212,170,102,0.2),_transparent_40%),radial-gradient(circle_at_bottom_right,_rgba(120,90,60,0.12),_transparent_35%)]" />
 
+  return (
+    <div className="luxury-site flex min-h-dvh flex-col bg-base-200 text-base-content">
       <Navbar />
 
-      <main className=" align-element  min-w-sm flex w-full h-full flex-1 flex-col ">
+      <main className="align-element flex min-w-0 flex-1 flex-col">
         <Outlet />
       </main>
 
-      <footer className="mt-auto w-full border-t border-base-300 bg-base-100 py-8 transition-colors duration-300">
-        <div className="align-element flex flex-col items-center justify-between gap-6 text-center text-[11px] font-medium uppercase tracking-[0.24em] text-base-content/70 md:flex-row md:text-left">
-          <div className="space-y-1">
-            <p className="font-semibold text-base-content">Casa Bertini</p>
-            <p className="lowercase tracking-normal">
-              email: info@casabertinidolci.com
-            </p>
-            <p className="normal-case tracking-normal">
-              tel: +(39) 0984 28 803 • Via F. Principe 21, 87100 Cosenza, Italy
-            </p>
+      <footer className="relative mt-auto overflow-hidden border-t border-base-content/10 bg-base-100/80 py-9 backdrop-blur-md">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent" />
+        <div className="align-element flex flex-col gap-7 text-center md:flex-row md:items-end md:justify-between md:text-left">
+          <div>
+            <p className="lux-kicker">Casa Bertini · Cosenza</p>
+            <p className="mt-3 font-serif text-xl tracking-tight text-base-content">Artisanal confectionery since 1951</p>
+            <div className="mt-4 flex flex-col gap-1 text-xs tracking-wide text-base-content/65 sm:flex-row sm:gap-4">
+              <a className="hover:text-primary" href="mailto:info@casabertinidolci.com">info@casabertinidolci.com</a>
+              <a className="hover:text-primary" href="tel:+39098428803">+39 0984 28 803</a>
+              <span>Via F. Principe 21, 87100 Cosenza, Italy</span>
+            </div>
           </div>
 
-          <div className="flex flex-col items-center gap-2 md:items-end">
-            <Link
-              to="/privacy-policy"
-              className="transition-colors duration-200 hover:text-base-content underline decoration-base-content/30 underline-offset-4"
-            >
+          <div className="flex flex-col items-center gap-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-base-content/60 md:items-end">
+            <Link to="/privacy-policy" className="text-base-content underline decoration-primary/60 underline-offset-4 hover:text-primary">
               Privacy & Cookie Policy
             </Link>
-            <p>
-              © 2026
-              {language === "italian"
-                ? " Tutti i diritti riservati"
-                : " All rights reserved"}
-            </p>
+            <p>© 2026 · {language === "italian" ? "Tutti i diritti riservati" : "All rights reserved"}</p>
           </div>
         </div>
       </footer>

@@ -8,7 +8,7 @@ function RebirthCollection() {
   const { language } = useContextLanguage();
 
   return (
-    <section className="relative bg-base-200 py-16 md:py-20 transition-colors duration-300">
+    <section className="lux-section lux-grid-line relative bg-base-200 py-16 md:py-20 transition-colors duration-300">
       <div className="mb-10 text-center">
         <h2
           className="text-3xl font-light uppercase tracking-[0.12em] sm:text-4xl lg:text-5xl"

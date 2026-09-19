@@ -8,47 +8,33 @@ import { useContextLanguage } from "../contextLanguages";
 
 function DownloadSection() {
   const { language } = useContextLanguage();
-  return (
-    <div className="mt-10 mb-10 flex flex-wrap justify-center gap-6 md:gap-12">
-      <a
-        href={catalogPdf}
-        download="Catalog Rebirth Collection.pdf"
-        className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-secondary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-base-300"
-      >
-        {language === "italian"
-          ? "Scarica Catalogo Completo"
-          : "Download Full Catalog"}
-      </a>
+  const resources = [
+    { label: language === "italian" ? "Catalogo completo" : "Full catalogue", detail: language === "italian" ? "Collezione e referenze" : "Collection and references", href: catalogPdf, download: "Catalog Rebirth Collection.pdf" },
+    { label: language === "italian" ? "Scheda tecnica" : "Technical datasheet", detail: language === "italian" ? "Specifiche prodotto" : "Product specifications", href: language === "italian" ? schedatecnicaitaliano : schedatecnicainglese, download: "Technical Data Chocolate Bars.pdf" },
+    { label: language === "italian" ? "Dati logistici" : "Logistics specifications", detail: language === "italian" ? "Informazioni distributive" : "Distribution information", href: language === "italian" ? logisticaTavoletteRinascita : logisticRebirthCollection, download: language === "italian" ? "Logistica Tavolette Rinascita.pdf" : "Logistic Rebirth Collection.pdf" }
+  ];
 
-      <a
-        href={
-          language === "italian" ? schedatecnicaitaliano : schedatecnicainglese
-        }
-        download="Technical Data Chocolate Bars.pdf"
-        className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-secondary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-base-300"
-      >
-        {language === "italian"
-          ? "Scarica Scheda Tecnica"
-          : "Download Technical Datasheet"}
-      </a>
-      <a
-        href={
-          language === "italian"
-            ? logisticaTavoletteRinascita
-            : logisticRebirthCollection
-        }
-        download={
-          language === "italian"
-            ? "Logistica Tavolette Rinascita.pdf"
-            : "Logistic Rebirth Collection.pdf"
-        }
-        className="inline-flex items-center justify-center rounded-full border border-[#d8c3a0] bg-[linear-gradient(135deg,#f9f1e6,#efe0c6)] px-7 py-3 text-xs font-medium uppercase tracking-[0.28em] text-secondary shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-base-300"
-      >
-        {language === "italian"
-          ? "Scarica dati Logistici"
-          : "Download Logistics Specs"}
-      </a>
-    </div>
+  return (
+    <section className="lux-section my-10">
+      <div className="lux-card grid overflow-hidden rounded-[26px] border border-base-content/10 bg-base-100/70 sm:grid-cols-[0.8fr_1.2fr]">
+        <div className="border-b border-base-content/10 p-6 sm:border-b-0 sm:border-r sm:p-7">
+          <p className="lux-kicker">{language === "italian" ? "Area professionale" : "Professional area"}</p>
+          <h3 className="lux-heading mt-3 text-3xl">{language === "italian" ? "Materiali per il trade" : "Trade materials"}</h3>
+          <p className="mt-4 text-sm leading-relaxed text-base-content/65">{language === "italian" ? "Catalogo, dati tecnici e specifiche logistiche pronti per il tuo team." : "Catalogue, technical data and logistics specifications ready for your team."}</p>
+        </div>
+        <div className="divide-y divide-base-content/10">
+          {resources.map((resource, index) => (
+            <a key={resource.label} href={resource.href} download={resource.download} className="group flex items-center justify-between gap-4 p-5 hover:bg-base-200/70 sm:px-7">
+              <div className="flex items-center gap-4">
+                <span className="font-serif text-xl text-primary/80">0{index + 1}</span>
+                <span><span className="block text-sm font-semibold text-base-content">{resource.label}</span><span className="mt-1 block text-xs text-base-content/55">{resource.detail}</span></span>
+              </div>
+              <span aria-hidden="true" className="text-lg text-primary transition-transform duration-200 group-hover:translate-x-1">↗</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

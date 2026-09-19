@@ -5,56 +5,24 @@ function Contacts() {
   const { language } = useContextLanguage();
 
   return (
-    <section className="min-h-screen bg-base-200 py-20">
-      <div className="align-element flex min-h-[70vh] items-center justify-center">
-        <div className="w-full max-w-2xl rounded-[32px] border border-base-300 bg-base-100 p-8 text-center shadow-xl md:p-12">
-          <p className="text-xs font-medium uppercase tracking-[0.4em] text-primary">
-            {language === "italian" ? "Contatti" : "Contact"}
-          </p>
-
-          <h1 className="mt-5 text-3xl font-light uppercase tracking-[0.12em] text-base-content md:text-5xl">
-            {language === "italian" ? "Mettiti in contatto" : "Get in touch"}
-          </h1>
-
-          <div className="mx-auto mt-6 h-px w-16 bg-primary" />
-
-          <p className="mx-auto mt-8 max-w-lg text-base leading-relaxed text-base-content/70 md:text-lg">
-            {language === "italian"
-              ? "Per informazioni, collaborazioni e richieste commerciali, puoi contattare Casa Bertini attraverso i seguenti canali."
-              : "For information, collaborations, and business enquiries, you can contact Casa Bertini through the following channels."}
-          </p>
-
-          <div className="mt-10 space-y-4">
-            <a
-              href="mailto:info@casabertinidolci.com"
-              className="block wrap-break-word rounded-2xl border border-base-300 bg-base-200 px-6 py-5 transition hover:border-primary hover:bg-base-300"
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-base-content/50">
-                Email
-              </p>
-
-              <p className="mt-2 text-lg font-medium tracking-wide text-primary md:text-xl">
-                info@casabertinidolci.com
-              </p>
-            </a>
-
-            <a
-              href="tel:+39098428803"
-              className="block rounded-2xl border border-base-300 bg-base-200 px-6 py-5 transition hover:border-primary hover:bg-base-300"
-            >
-              <p className="text-xs uppercase tracking-[0.3em] text-base-content/50">
-                {language === "italian" ? "Telefono" : "Telephone"}
-              </p>
-
-              <p className="mt-2 text-lg font-medium tracking-wide text-base-content md:text-xl">
-                +39 0984 28 803
-              </p>
-              <p className="mt-1 text-sm italic tracking-wide text-base-content/50">
-                {language === "italian"
-                  ? "da telefono clicca per chiamare"
-                  : "tap to call (mobile only)"}
-              </p>
-            </a>
+    <section className="lux-section flex min-h-[calc(100dvh-180px)] items-center py-12 md:py-20">
+      <div className="w-full">
+        <div className="lux-card mx-auto grid max-w-5xl overflow-hidden rounded-[32px] border border-base-content/10 bg-base-100/75 md:grid-cols-[0.9fr_1.1fr]">
+          <div className="bg-base-300/50 p-7 md:p-10">
+            <p className="lux-kicker">{language === "italian" ? "Contatti commerciali" : "Business enquiries"}</p>
+            <h1 className="lux-heading mt-5 text-5xl sm:text-6xl">{language === "italian" ? "Parliamo di qualità." : "Let’s talk quality."}</h1>
+            <p className="mt-6 max-w-sm leading-relaxed text-base-content/70">{language === "italian" ? "Per informazioni, collaborazioni e richieste commerciali, il nostro team è a disposizione." : "For information, partnerships and business enquiries, our team is at your disposal."}</p>
+          </div>
+          <div className="p-5 sm:p-7 md:p-10">
+            <div className="space-y-3">
+              <a href="mailto:info@casabertinidolci.com" className="group block rounded-2xl border border-base-content/10 p-5 hover:border-primary hover:bg-base-200/60">
+                <p className="lux-kicker">Email</p><p className="mt-3 break-all font-serif text-xl text-base-content sm:text-2xl">info@casabertinidolci.com <span className="ml-1 text-primary group-hover:ml-2">↗</span></p>
+              </a>
+              <a href="tel:+39098428803" className="group block rounded-2xl border border-base-content/10 p-5 hover:border-primary hover:bg-base-200/60">
+                <p className="lux-kicker">{language === "italian" ? "Telefono" : "Telephone"}</p><p className="mt-3 font-serif text-2xl text-base-content">+39 0984 28 803 <span className="ml-1 text-primary group-hover:ml-2">↗</span></p>
+              </a>
+            </div>
+            <p className="mt-6 text-xs leading-relaxed text-base-content/55">{language === "italian" ? "Casa Bertini · Via F. Principe 21, 87100 Cosenza, Italia" : "Casa Bertini · Via F. Principe 21, 87100 Cosenza, Italy"}</p>
           </div>
         </div>
       </div>

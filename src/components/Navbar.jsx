@@ -1,179 +1,92 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Logo from "../assets/Logo.png";
-import { useState, useEffect } from "react";
 import ThemeToggleIcon from "./ThemeToggleIcon";
-import {
-  italianLanguage,
-  englishLanguage,
-  EnglandFlag
-} from "../assets/flags/flags.jsx";
+import { italianLanguage, EnglandFlag } from "../assets/flags/flags.jsx";
 import { useContextLanguage } from "../contextLanguages.jsx";
-import { useNavigate } from "react-router-dom";
 
 const ItalyFlag = italianLanguage.flag;
 
 function Navbar() {
   const { toggleLanguage, language } = useContextLanguage();
   const navigate = useNavigate();
-
-  //////// THEME SETTINGS
-  const getInitialTheme = () => {
-    const savedTheme = localStorage.getItem("theme");
-    return savedTheme || "luxury";
-  };
-
-  const [theme, setTheme] = useState(getInitialTheme);
   const location = useLocation();
+  const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "luxury");
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-    console.log(
-      "Tema attuale nel DOM:",
-      document.documentElement.getAttribute("data-theme")
-    );
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "bumblebee" ? "luxury" : "bumblebee"));
-  };
+  const toggleTheme = () => setTheme((previous) => (previous === "bumblebee" ? "luxury" : "bumblebee"));
 
-  //// CLICKS SETTING
-
-  const handleNavClick = (e, sectionId, path) => {
-    e.preventDefault();
-
-    // Se non c'è una section, naviga semplicemente al path
+  const handleNavClick = (event, sectionId, path) => {
+    event.preventDefault();
     if (!sectionId) {
       navigate(path);
       return;
     }
 
-    // Se siamo già nella home, facciamo direttamente lo scroll
     if (location.pathname === "/" && path === "/") {
       if (sectionId === "home") {
         window.scrollTo({ top: 0, behavior: "smooth" });
         return;
       }
-
-      const element = document.getElementById(sectionId);
-
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
       return;
     }
 
-    // Se siamo in un'altra pagina, navighiamo
-    // e passiamo alla nuova pagina la section da raggiungere
-    navigate(path, {
-      state: { sectionId }
-    });
+    navigate(path, { state: { sectionId } });
   };
 
-  /////////NAVIGATION ITEMS
-
   const navItems = [
-    {
-      name: language === "italian" ? "Home" : "Home",
-      path: "/",
-      sectionId: "home"
-    },
-    {
-      name:
-        language === "italian" ? "Collezione Rinascita" : "Rebirth Collection",
-      path: "/",
-      sectionId: "rebirth"
-    },
-    {
-      name:
-        language === "italian" ? "Collezione Classica" : "Heritage Collection",
-      path: "/",
-      sectionId: "history-collection"
-    },
-    ,
-    {
-      name: language === "italian" ? "Chi siamo" : "About",
-      path: "/about"
-    },
-    {
-      name: language === "italian" ? "Info Tecniche" : "Technical Info",
-      path: "/technical-info"
-    },
-    {
-      name: language === "italian" ? "Contatti" : "Contacts",
-      path: "/contacts"
-    }
+    { name: "Home", path: "/", sectionId: "home" },
+    { name: language === "italian" ? "Collezione Rinascita" : "Rebirth Collection", path: "/", sectionId: "rebirth" },
+    { name: language === "italian" ? "Collezione Classica" : "Heritage Collection", path: "/", sectionId: "history-collection" },
+    { name: language === "italian" ? "Chi siamo" : "About", path: "/about" },
+    { name: language === "italian" ? "Info tecniche" : "Technical info", path: "/technical-info" },
+    { name: language === "italian" ? "Contatti" : "Contacts", path: "/contacts" }
   ];
 
   return (
-    <header className="sticky top-0 z-50  h-21 border-b border-base-200  bg-base-100/80 backdrop-blur-xl transition-colors duration-300">
-      <nav className="align-element flex items-center justify-between gap-4 py-3">
-        <Link
-          to="/"
-          className="flex items-center gap-3  "
-          aria-label="Casa Bertini home"
-        >
-          <img
-            src={Logo}
-            alt="casa bertini"
-            className="rounded-2xl h-14 w-auto object-contain sm:h-16"
-          />
+    <header className="sticky top-0 z-50 border-b border-base-content/10 bg-base-100/80 backdrop-blur-xl">
+      <nav className="align-element flex min-h-[74px] items-center justify-between gap-3 py-2.5">
+        <Link to="/" className="shrink-0" aria-label="Casa Bertini home">
+          <img src={Logo} alt="Casa Bertini" className="h-12 w-auto object-contain sm:h-14" />
         </Link>
 
-        <div className="dropdown dropdown-end lg:hidden">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-sm rounded-full border border-base-300 bg-base-100/60 px-4 text-[11px] font-medium uppercase tracking-[0.22em] text-base-content shadow-sm"
-          >
-            {language === "italian" ? "Menu" : "Menu"}
+        <div className="hidden xl:flex xl:flex-1 xl:justify-center">
+          <ul className="menu menu-horizontal gap-0.5 rounded-full border border-base-content/10 bg-base-100/70 p-1.5 shadow-[0_10px_30px_rgba(20,15,10,0.06)]">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <button onClick={(event) => handleNavClick(event, item.sectionId, item.path)} className="rounded-full px-3 py-2 text-[9px] font-bold uppercase tracking-[0.14em] text-base-content/70 hover:bg-primary hover:text-primary-content">
+                  {item.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="flex items-center gap-2">
+          <div className="dropdown dropdown-end xl:hidden">
+            <button type="button" tabIndex={0} className="btn btn-ghost btn-sm rounded-full border border-base-content/10 bg-base-100/70 px-4 text-[10px] font-bold uppercase tracking-[0.16em] shadow-sm">
+              {language === "italian" ? "Menu" : "Menu"}
+            </button>
+            <ul tabIndex={0} className="dropdown-content menu z-50 mt-3 w-64 rounded-[20px] border border-base-content/10 bg-base-100 p-2 shadow-2xl backdrop-blur-xl">
+              {navItems.map((item) => (
+                <li key={item.name}>
+                  <button onClick={(event) => handleNavClick(event, item.sectionId, item.path)} className="rounded-xl px-4 py-3 text-left text-[10px] font-bold uppercase tracking-[0.15em] hover:bg-base-200 hover:text-primary">
+                    {item.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <ul
-            tabIndex="-1"
-            className="dropdown-content menu z-1 mt-3 w-56 rounded-2xl border border-base-200 bg-base-100 p-2 shadow-xl"
-          >
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <button
-                  to={item.path}
-                  onClick={(e) => handleNavClick(e, item.sectionId, item.path)}
-                  className="rounded-xl px-3 py-2 text-sm tracking-[0.12em] text-base-content uppercase hover:bg-base-200"
-                >
-                  {item.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="hidden lg:flex">
-          <ul className="menu menu-horizontal items-center gap-1 rounded-full border border-base-200 bg-base-100/70 p-2 shadow-sm backdrop-blur-md">
-            {navItems.map((item) => (
-              <li key={item.name}>
-                <button
-                  onClick={(e) => handleNavClick(e, item.sectionId, item.path)}
-                  className="rounded-full px-4 py-2 text-[10px] font-medium uppercase tracking-[0.22em] text-base-content hover:bg-base-200"
-                >
-                  {item.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <ThemeToggleIcon toggleTheme={toggleTheme} theme={theme} />
-
-        <div
-          className="sm:relative sm:mb-auto lg:absolute top-3 right-5 flex flex-col items-center cursor-pointer"
-          onClick={() => toggleLanguage()}
-        >
-          {language === "italian" ? <ItalyFlag /> : <EnglandFlag />}
-
-          <p className="hidden lg:block">eng-it</p>
+          <ThemeToggleIcon toggleTheme={toggleTheme} theme={theme} />
+          <button type="button" onClick={toggleLanguage} className="inline-flex h-10 min-w-10 items-center justify-center rounded-full border border-base-content/10 bg-base-100/70 px-2 shadow-sm hover:border-primary hover:bg-primary/10" aria-label={language === "italian" ? "Switch to English" : "Passa all’italiano"}>
+            {language === "italian" ? <ItalyFlag /> : <EnglandFlag />}
+          </button>
         </div>
       </nav>
     </header>
