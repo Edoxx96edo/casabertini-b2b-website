@@ -127,7 +127,7 @@ function Navbar() {
           </div>
 
           <ThemeToggleIcon toggleTheme={toggleTheme} theme={theme} />
-          <details className="dropdown">
+          <details className="dropdown dropdown-end">
             <summary
               className="inline-flex h-10 min-w-10 items-center justify-center rounded-full border border-base-content/10 bg-base-100/70 px-2 shadow-sm hover:border-primary hover:bg-primary/10"
               aria-label="Select language"
