@@ -36,7 +36,12 @@ img {
 
 button,
 a {
-  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease,
+    box-shadow 180ms ease;
 }
 
 :focus-visible {
@@ -50,8 +55,16 @@ a {
 
 .luxury-site {
   background:
-    radial-gradient(circle at 12% 0%, color-mix(in srgb, var(--color-primary) 14%, transparent), transparent 26rem),
-    radial-gradient(circle at 92% 35%, color-mix(in srgb, var(--color-base-content) 5%, transparent), transparent 28rem),
+    radial-gradient(
+      circle at 12% 0%,
+      color-mix(in srgb, var(--color-primary) 14%, transparent),
+      transparent 26rem
+    ),
+    radial-gradient(
+      circle at 92% 35%,
+      color-mix(in srgb, var(--color-base-content) 5%, transparent),
+      transparent 28rem
+    ),
     var(--color-base-200);
 }
 
@@ -73,18 +86,25 @@ a {
   height: 1px;
   content: "";
   transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--color-primary) 48%, transparent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-primary) 48%, transparent),
+    transparent
+  );
 }
 
 .luxury-site .lux-card {
   border-color: color-mix(in srgb, var(--color-base-content) 12%, transparent);
   background: color-mix(in srgb, var(--color-base-100) 88%, transparent);
-  box-shadow: 0 20px 55px color-mix(in srgb, var(--color-base-content) 7%, transparent);
+  box-shadow: 0 20px 55px
+    color-mix(in srgb, var(--color-base-content) 7%, transparent);
 }
 
 .luxury-site .lux-card:hover {
   border-color: color-mix(in srgb, var(--color-primary) 55%, transparent);
-  box-shadow: 0 28px 70px color-mix(in srgb, var(--color-base-content) 13%, transparent);
+  box-shadow: 0 28px 70px
+    color-mix(in srgb, var(--color-base-content) 13%, transparent);
 }
 
 .lux-kicker {
@@ -116,7 +136,8 @@ a {
   letter-spacing: 0.18em;
   padding: 0.85rem 1.25rem;
   text-transform: uppercase;
-  box-shadow: 0 10px 26px color-mix(in srgb, var(--color-base-content) 7%, transparent);
+  box-shadow: 0 10px 26px
+    color-mix(in srgb, var(--color-base-content) 7%, transparent);
 }
 
 .lux-action:hover {
@@ -124,12 +145,17 @@ a {
   background: var(--color-primary);
   color: var(--color-primary-content);
   transform: translateY(-2px);
-  box-shadow: 0 16px 34px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  box-shadow: 0 16px 34px
+    color-mix(in srgb, var(--color-primary) 25%, transparent);
 }
 
 .lux-grid-line {
-  background-image: linear-gradient(to right, color-mix(in srgb, var(--color-base-content) 7%, transparent) 1px, transparent 1px);
-  background-size: min(8vw, 7rem) 100%;
+  background-image: linear-gradient(
+    to right,
+    color-mix(in srgb, var(--color-base-content) 7%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: min(7vw, 8rem) 100%;
 }
 
 @utility align-element {
